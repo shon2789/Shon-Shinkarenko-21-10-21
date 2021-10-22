@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0.5rem;
+    width: 100%;
+    height: 8rem;
+
+    & h3 {
+        font-size: 2rem;
+        font-family: Kalam regular;
+    }
+
+    .nav-container {
+        display: flex;
+        gap: 3rem;
+        font-size: 1.3rem;
+        font-family: Poppins regular;
+
+        & .active {
+            color: red;
+        }
+    }
+}

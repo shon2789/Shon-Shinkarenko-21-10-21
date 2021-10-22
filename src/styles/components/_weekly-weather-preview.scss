@@ -1,0 +1,9 @@
+.weekly-weather-preview {
+    @include flex-center;
+    flex-direction: column;
+    color: #3385b6;
+
+    & img {
+        width: 69px;
+    }
+}

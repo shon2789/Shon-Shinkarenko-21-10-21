@@ -1,0 +1,19 @@
+.weather-top-bar {
+    width: 90%;
+    align-self: center;
+    .city-search {
+        width: 22rem;
+        height: 2.7rem;
+        padding: 0.5rem 1rem;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.3rem;
+    }
+
+    .search-city-input {
+        color: black;
+        width: 20rem;
+        font-family: Poppins regular;
+    }
+}

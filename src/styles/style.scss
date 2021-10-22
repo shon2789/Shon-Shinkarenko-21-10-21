@@ -1,0 +1,20 @@
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixin";
+@import "setup/fonts";
+
+//Basics
+@import "basics/base";
+@import "basics/layout";
+
+//Pages
+@import "pages/weather-app";
+
+//Components
+@import "components/header";
+@import "components/weather-content";
+@import "components/weather-top-bar";
+@import "components/today-weather";
+@import "components/weekly-weather";
+@import "components/weekly-weather-preview";
