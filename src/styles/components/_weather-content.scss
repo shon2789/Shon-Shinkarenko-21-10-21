@@ -3,9 +3,12 @@
     // height: 70%;
 
     background: linear-gradient(109.94deg, rgba(48, 131, 220, 0.86) 1.07%, #7ede92 99.36%);
+
     border-radius: 30px;
     padding: 2rem;
     margin: 4rem auto;
     display: flex;
     flex-direction: column;
+    //for dark mode
+    // background-image: linear-gradient(to right, #141e30, #243b55);
 }

@@ -1,20 +1,28 @@
 import React from 'react'
-import weatherIcon from '../assets/images/cloudy.png'
+import { useSelector } from 'react-redux'
+import { utilService } from '../services/util.service'
+
 
 export const TodayWeather = () => {
+
+    const currCity = useSelector(state => state.weatherModule.currCity)
+    const currDate = utilService.getCurrDay()
+
+
+    if (!currCity) return <h3>Loading..</h3>
     return (
         <div className="today-weather">
             <div className="current-day">
-                <h3>SUN 24</h3>
-                <h3>Today in Vancouver</h3>
+                <h3>{currDate.day} {currDate.date},</h3>
+                <h3 className="current-city">Today in {currCity.cityName}</h3>
             </div>
             <div className="current-weather-icon">
-                <img src={weatherIcon} alt="" />
-                <h4>Moderate sun</h4>
+                <img src={`https://developer.accuweather.com/sites/default/files/${(currCity.cityData.WeatherIcon < 10) ? '0' + currCity.cityData.WeatherIcon : currCity.cityData.WeatherIcon}-s.png`} alt="" />
+                <h4>{currCity.cityData.WeatherText}</h4>
             </div>
 
             <div className="current-degrees">
-                <h4>22°</h4>
+                <h4>{currCity.cityData.Temperature.Metric.Value}°</h4>
             </div>
         </div>
     )

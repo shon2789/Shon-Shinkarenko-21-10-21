@@ -10,6 +10,7 @@ export const App = () => {
 
       <Switch>
         <Route exact path="/favourites" component={Favourites} />
+        <Route exact path="/:cityKey" component={WeatherApp} />
         <Route exact path="/" component={WeatherApp} />
       </Switch>
     </Router>

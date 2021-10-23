@@ -1,6 +1,10 @@
 .weather-top-bar {
     width: 90%;
     align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     .city-search {
         width: 22rem;
         height: 2.7rem;
@@ -15,5 +19,18 @@
         color: black;
         width: 20rem;
         font-family: Poppins regular;
+    }
+
+    .icon-container {
+        @include flex-center;
+    }
+
+    .favourite-icon {
+        font-size: 2rem;
+        transition: all 0.5s;
+        &:hover {
+            cursor: pointer;
+            color: rgb(235, 76, 76);
+        }
     }
 }

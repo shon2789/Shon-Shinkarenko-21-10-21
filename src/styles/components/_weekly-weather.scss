@@ -12,6 +12,7 @@
     display: flex;
     gap: 2rem;
     flex-direction: column;
+    flex-wrap: wrap;
 
     & h2 {
         font-size: 2rem;

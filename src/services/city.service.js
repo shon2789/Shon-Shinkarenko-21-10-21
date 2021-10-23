@@ -2,7 +2,7 @@ import axios from "axios"
 import { localStorageService } from "./storage.service"
 
 const api = process.env.REACT_APP_ACCUWEATHER_API
-const storageKey = 'chachedSearch'
+const storageKey = 'cityNames'
 const apiUrl = `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${api}&q=`
 
 export const cityService = {
@@ -15,7 +15,7 @@ async function query(searchTxt) {
     const chachedSearch = localStorageService.loadFromStorage(storageKey) || {}
 
     if (chachedSearch[searchTxt]) {
-        if ((Date.now() - chachedSearch[searchTxt].createdAt) < 1000 * 60 * 60) {
+        if ((Date.now() - chachedSearch[searchTxt].createdAt) < 1000 * 60 * 1200) {
             console.log('Returned from chache')
             return Promise.resolve(chachedSearch[searchTxt].data)
         }

@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react'
-import { cityService } from '../services/city.service'
+import React from 'react'
 import { TodayWeather } from './TodayWeather'
 import { WeatherTopBar } from './WeatherTopBar'
 import { WeeklyWeather } from './WeeklyWeather'
 
-export const WeatherContent = () => {
+export const WeatherContent = ({ onChooseCity, onToggleFavourite, isFavourite }) => {
 
     return (
         <div className="weather-content-container main-layout ">
-            <WeatherTopBar />
+            <WeatherTopBar onChooseCity={onChooseCity} onToggleFavourite={onToggleFavourite} isFavourite={isFavourite} />
             <TodayWeather />
             <WeeklyWeather />
         </div>

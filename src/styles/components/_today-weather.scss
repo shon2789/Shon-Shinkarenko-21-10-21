@@ -17,15 +17,21 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        font-family: Poppins medium;
 
         & h3 {
             text-align: left;
+        }
+
+        .current-city {
+            font-family: Poppins regular;
+            font-size: 1.5rem;
         }
     }
 
     & img {
         // width: 100%;
-        height: 250px;
+        height: 150px;
     }
 
     .current-weather-icon {
@@ -39,7 +45,7 @@
         // @include flex-center;
         display: flex;
         justify-content: flex-end;
-        font-size: 7.3rem;
+        font-size: 6rem;
         flex: 1;
 
         & h4 {
