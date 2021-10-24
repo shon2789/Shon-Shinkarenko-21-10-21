@@ -27,9 +27,9 @@ async function query(searchTxt) {
 
     chachedSearch[searchTxt] = {
         createdAt: Date.now(),
-        data: searchResults.data.map(data => { return { value: data.Key, label: data.LocalizedName } })
+        data: searchResults.data.map(data => { return { value: data.Key, label: data.LocalizedName, country: data.Country.LocalizedName } })
     }
     //Saving to cache
     localStorageService.saveToStorage(storageKey, chachedSearch)
-    return searchResults.data.map(data => { return { value: data.Key, label: data.LocalizedName } })
+    return searchResults.data.map(data => { return { value: data.Key, label: data.LocalizedName, country: data.Country.LocalizedName } })
 }

@@ -1,19 +1,26 @@
 .today-weather {
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 2rem;
     width: 90%;
-    // justify-content: space-around;
-    margin-top: 1rem;
-    // padding: 0 4rem;
+    margin-top: 1.5rem;
     align-self: center;
     font-family: Poppins regular;
+
+    @include for-large-phone {
+        flex-direction: row;
+        margin-top: 2rem;
+    }
 
     .current-day {
         font-size: 1.6rem;
         flex: 1;
-        // @include flex-center;
-        // text-align: left;
+
+        @include for-large-phone {
+            font-size: 1.3rem;
+        }
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -26,12 +33,27 @@
         .current-city {
             font-family: Poppins regular;
             font-size: 1.5rem;
+
+            @include for-large-phone {
+                font-size: 1.2rem;
+            }
+
+            @include for-large-tablet {
+                font-size: 1.6rem;
+            }
         }
     }
 
     & img {
-        // width: 100%;
-        height: 150px;
+        width: 200px;
+
+        @include for-large-phone {
+            width: 150px;
+        }
+
+        @include for-large-tablet {
+            width: 200px;
+        }
     }
 
     .current-weather-icon {
@@ -42,14 +64,21 @@
     }
 
     .current-degrees {
-        // @include flex-center;
         display: flex;
         justify-content: flex-end;
-        font-size: 6rem;
+        font-size: 3rem;
         flex: 1;
 
         & h4 {
             align-self: flex-end;
+        }
+
+        @include for-large-phone {
+            font-size: 3.5rem;
+        }
+
+        @include for-large-tablet {
+            font-size: 5rem;
         }
     }
 }

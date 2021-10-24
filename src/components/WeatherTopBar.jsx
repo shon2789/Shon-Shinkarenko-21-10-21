@@ -26,23 +26,27 @@ export const WeatherTopBar = ({ onChooseCity, onToggleFavourite, isFavourite }) 
 
 
     const chooseCity = (res) => {
+        console.log('res', res)
         onChooseCity({ cityKey: res.value, cityName: res.label })
         inputRef.current.value = ''
         setSearchResults(null)
     }
 
+    const onClearInput = () => {
 
+        //Prevent immediate invoke (<li> onClick will happen first)
+        setTimeout(() => {
+            setSearchResults(null)
+            inputRef.current.value = ''
+        }, 50)
+    }
 
     return (
         <section className="weather-top-bar">
             <form>
-                <input ref={inputRef} name="searchTxt" onChange={(ev) => { debouncedChangeHandler(ev) }} type="text" placeholder="Search city" className="city-search" />
+                <input onBlur={onClearInput} ref={inputRef} name="searchTxt" onChange={(ev) => { debouncedChangeHandler(ev) }} type="text" placeholder="Search city" className={`${searchResults ? 'on-focus' : ''} city-search`} />
+                {searchResults && <div className="search-list"><ul>{searchResults.map(res => <li key={res.value} onClick={() => { chooseCity(res) }}>{res.label}, {res.country}</li>)}</ul></div>}
             </form>
-            <div className="search-list">
-                <ul>
-                    {searchResults && searchResults.map(res => <li key={res.label} onClick={() => { chooseCity(res) }}>{res.label}</li>)}
-                </ul>
-            </div>
             {!isFavourite &&
                 <Tooltip type="button" title="Save to favourites" arrow placement="top"><div className="icon-container"><MdFavoriteBorder onClick={onToggleFavourite} className="favourite-icon" /></div></Tooltip>
             }

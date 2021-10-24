@@ -13,8 +13,8 @@ export const FavouritesList = () => {
 
 
     return (
-        <div>
-            {favouriteCities && favouriteCities.map(city => <PreviewFavourites key={city.cityKey} cityDetails={city} />)}
+        <div className="favourite-list main-layout">
+            {favouriteCities && favouriteCities.map(city => <PreviewFavourites key={city[0]} cityInfo={city} />)}
         </div>
     )
 }

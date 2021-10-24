@@ -12,9 +12,12 @@
 @import "pages/weather-app";
 
 //Components
+@import "components/screen";
 @import "components/header";
 @import "components/weather-content";
 @import "components/weather-top-bar";
 @import "components/today-weather";
 @import "components/weekly-weather";
 @import "components/weekly-weather-preview";
+@import "components/favourites-list";
+@import "components/favourites-preview";
