@@ -19,6 +19,7 @@
         margin: 3rem auto;
     }
 
-    //for dark mode
-    // background-image: linear-gradient(to right, #141e30, #243b55);
+    &.dark-mode {
+        background-image: linear-gradient(to right, #141e30, #243b55);
+    }
 }

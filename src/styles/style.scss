@@ -10,14 +10,19 @@
 
 //Pages
 @import "pages/weather-app";
+@import "pages/favourites-page";
 
 //Components
 @import "components/screen";
 @import "components/header";
-@import "components/weather-content";
-@import "components/weather-top-bar";
-@import "components/today-weather";
-@import "components/weekly-weather";
-@import "components/weekly-weather-preview";
-@import "components/favourites-list";
-@import "components/favourites-preview";
+
+//Weather components
+@import "components/weather/weather-content";
+@import "components/weather/weather-top-bar";
+@import "components/weather/today-weather";
+@import "components/weather/weekly-weather";
+@import "components/weather/weekly-weather-preview";
+
+//Favourites components
+@import "components/favourites/favourites-list";
+@import "components/favourites/favourites-preview";

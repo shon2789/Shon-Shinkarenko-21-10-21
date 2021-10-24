@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import thunk from 'redux-thunk'
+import { themeReducer } from './reducers/theme.reducer';
 import { weatherReducer } from './reducers/weather.reducer';
 
 
@@ -8,7 +9,8 @@ import { weatherReducer } from './reducers/weather.reducer';
 
 
 const rootReducer = combineReducers({
-    weatherModule: weatherReducer
+    weatherModule: weatherReducer,
+    themeModule: themeReducer
 })
 
 

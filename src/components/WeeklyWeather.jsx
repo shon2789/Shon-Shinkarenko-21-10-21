@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
-// import { weatherService } from '../services/weather.service'
 import { WeeklyWeatherPreview } from './WeeklyWeatherPreview'
 
-export const WeeklyWeather = () => {
+export const WeeklyWeather = ({ isCelcius }) => {
+
     const currCityFiveDaysDetails = useSelector(state => state.weatherModule.currCityFiveDaysDetails)
+    const isDarkMode = useSelector(state => state.themeModule.isDarkMode)
 
     return (
-        <section className="weekly-weather">
-            <h2>Next 5 days...</h2>
+        <section className={`${isDarkMode ? 'dark-mode' : ''} weekly-weather`}>
+            <h2 className={isDarkMode ? 'dark-mode' : ''}>Next 5 days...</h2>
             <div className="weekly-weather-preview-container">
 
-                {currCityFiveDaysDetails.map(currDay => <WeeklyWeatherPreview key={currDay.date} currDay={currDay} />)}
+                {currCityFiveDaysDetails.map(currDay => <WeeklyWeatherPreview isCelcius={isCelcius} key={currDay.date} currDay={currDay} />)}
 
             </div>
         </section>

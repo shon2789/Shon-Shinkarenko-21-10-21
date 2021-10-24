@@ -15,6 +15,7 @@
     }
 
     & h3 {
+        color: $main-dark-color;
         font-size: 1.5rem;
         font-family: Kalam regular;
 
@@ -25,6 +26,10 @@
         @include for-tablet {
             font-size: 2rem;
         }
+
+        &.dark-mode {
+            color: $main-light-color;
+        }
     }
 
     .nav-container {
@@ -33,10 +38,11 @@
         background-color: #edededf9;
         transition: transform 0.5s;
         text-align: center;
-        color: #898989;
+        color: $main-dark-color;
         font-size: 1.2rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
         position: fixed;
         top: 0;
         right: 0;
@@ -44,19 +50,21 @@
         width: 20rem;
         z-index: 10;
 
+        &.dark-mode {
+            background-color: #292929f7;
+        }
+
         &.mobile-menu-active {
+            color: $main-dark-color;
             transform: translateX(0);
             & > * {
                 border-bottom: 1px solid #5454543e;
+                width: 100%;
+            }
+            &.dark-mode {
+                color: $main-light-color;
             }
         }
-
-        // & a {
-        //     border-bottom: 1px solid #292929;
-        //     @include for-tablet {
-        //         border: none;
-        //     }
-        // }
 
         @include for-tablet {
             display: flex;
@@ -66,6 +74,14 @@
             gap: 2rem;
             width: auto;
             transform: translateX(0);
+            &.dark-mode {
+                background-color: transparent;
+                color: $main-light-color;
+            }
+
+            & a:hover {
+                color: #bfbfbf;
+            }
         }
 
         .nav-btn-container {
@@ -75,14 +91,47 @@
             @include for-tablet {
                 padding: 0;
             }
+        }
+        & .active {
+            color: rgb(53, 165, 183);
+        }
 
-            & .active {
-                color: red;
+        h4 {
+            padding: 0.8rem;
+            @include for-tablet {
+                padding: 0;
             }
+        }
+
+        .theme-icon-container {
+            @include flex-center;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .theme-icon {
+            color: #dcdcdc;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .moon-icon {
+            color: $main-dark-color;
         }
     }
     .mobile-menu-icon {
         font-size: 1.3rem;
+
+        & path {
+            color: $main-dark-color;
+        }
+        &.dark-mode path {
+            color: $main-light-color;
+        }
+
         @include for-tablet {
             display: none;
         }

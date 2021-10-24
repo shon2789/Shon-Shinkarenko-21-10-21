@@ -1,3 +1,4 @@
+import { alertMessage } from "../../services/alert.service"
 import { weatherService } from "../../services/weather.service"
 
 export const loadCityWeather = (cityDetails) => {
@@ -10,13 +11,12 @@ export const loadCityWeather = (cityDetails) => {
             })
             return cityData
         } catch (err) {
-            console.log(err)
+            alertMessage('Oops! Something went wrong', 'danger', 2000)
         }
     }
 }
 
 export const loadCityFiveDaysWeather = (cityKey) => {
-
     return async dispatch => {
         try {
             const daysData = await weatherService.cityFiveDaysWeatherQuery(cityKey)
@@ -24,10 +24,9 @@ export const loadCityFiveDaysWeather = (cityKey) => {
                 type: 'SET_CURR_CITY_FIVE_DAY',
                 daysData
             })
-            console.log(daysData, 'daysdata')
             return daysData
         } catch (err) {
-            console.log(err)
+            alertMessage('Oops! Something went wrong', 'danger', 2000)
         }
     }
 }

@@ -1,9 +1,12 @@
+import { localStorageService } from "./storage.service";
+
 export const utilService = {
     debounce,
     getCurrDay,
     getFormattedDay,
     ferToCel,
-    celToFer
+    celToFer,
+    toggleDarkMode
 }
 
 function debounce(func, timeout = 0.75) {
@@ -41,5 +44,9 @@ function ferToCel(degrees) {
 }
 
 function celToFer(degrees) {
-    return (degrees * (5 / 9) + 32).toFixed(1)
+    return (degrees * (9 / 5) + 32).toFixed(1)
+}
+
+function toggleDarkMode(boolean) {
+    localStorageService.saveToStorage('isDarkMode', boolean)
 }

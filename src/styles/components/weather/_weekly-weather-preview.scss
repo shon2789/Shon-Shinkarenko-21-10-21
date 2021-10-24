@@ -3,6 +3,10 @@
     flex-direction: column;
     color: #3385b6;
 
+    &.dark-mode {
+        color: $main-light-color;
+    }
+
     & img {
         width: 69px;
     }

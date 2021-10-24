@@ -1,9 +1,6 @@
-.weather-app {
+.favourites-container {
     background-color: $main-light-color;
-    color: $main-light-color;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh;
 
     &.dark-mode {
         background-color: #1b1b1b;

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { utilService } from '../services/util.service'
 
 
-export const TodayWeather = () => {
+export const TodayWeather = ({ isCelcius }) => {
 
     const currCity = useSelector(state => state.weatherModule.currCity)
     const currDate = utilService.getCurrDay()
@@ -22,7 +22,7 @@ export const TodayWeather = () => {
             </div>
 
             <div className="current-degrees">
-                <h4>{currCity.cityData.Temperature.Metric.Value}°</h4>
+                <h4>{isCelcius ? currCity.cityData.Temperature.Metric.Value : currCity.cityData.Temperature.Imperial.Value}°</h4>
             </div>
         </div>
     )

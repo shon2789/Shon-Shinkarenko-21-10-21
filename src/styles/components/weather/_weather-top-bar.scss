@@ -10,14 +10,18 @@
     }
 
     .city-search {
-        width: 15rem;
-        // height: 2.7rem;
+        width: 14rem;
         padding: 0.5rem 1rem;
         outline: none;
         border: none;
         border-radius: 10px;
         font-size: 1.3rem;
         position: relative;
+
+        &.dark-mode {
+            background-color: #0a111c;
+            color: $main-light-color;
+        }
 
         @include for-large-phone {
             width: 18rem;
@@ -30,15 +34,26 @@
 
     .search-list {
         position: absolute;
-        width: 15rem;
+        width: 14rem;
         background-color: #fff;
         border-radius: 0 0 10px 10px;
-        color: #292929;
+        color: $main-dark-color;
         padding: 0.5rem 0;
         font-size: 0.9rem;
         z-index: 100;
-        border-top: 1px solid #292929;
+        border-top: 1px solid $main-dark-color;
         font-family: Poppins regular;
+
+        &.dark-mode {
+            background-color: #0a111c;
+            color: $main-light-color;
+            outline: 1px solid #575757;
+
+            & li:hover {
+                background-color: #111c2f;
+                cursor: pointer;
+            }
+        }
 
         @include for-large-phone {
             width: 18rem;
@@ -55,6 +70,24 @@
             &:hover {
                 background-color: rgb(235, 235, 235);
                 cursor: pointer;
+            }
+        }
+    }
+
+    .top-bar-tools-container {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 1rem;
+        font-family: Poppins regular;
+
+        & h3 {
+            font-size: 1.7rem;
+            transition: all 0.3s;
+
+            &:hover {
+                cursor: pointer;
+                color: rgb(210, 210, 210);
             }
         }
     }
