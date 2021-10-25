@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { weatherService } from '../services/weather.service'
-import { PreviewFavourites } from './PreviewFavourites'
+import { weatherService } from '../../services/weather.service'
+import { PreviewFavourites } from '../favourites/PreviewFavourites'
 
 export const FavouritesList = () => {
     const isDarkMode = useSelector(state => state.themeModule.isDarkMode)

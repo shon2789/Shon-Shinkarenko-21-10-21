@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { alertMessage } from '../services/alert.service'
-import { weatherService } from '../services/weather.service'
+import { alertMessage } from '../../services/alert.service'
+import { weatherService } from '../../services/weather.service'
 
 export const PreviewFavourites = ({ cityInfo }) => {
 

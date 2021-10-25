@@ -1,10 +1,10 @@
 import React, { useCallback, useRef, useState } from 'react'
-import { cityService } from '../services/city.service';
+import { cityService } from '../../services/city.service';
 import debounce from "lodash.debounce";
 import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import Tooltip from '@mui/material/Tooltip';
-import { alertMessage } from '../services/alert.service';
 import { useSelector } from 'react-redux';
+import { alertMessage } from '../../services/alert.service';
 
 
 export const WeatherTopBar = ({ onChooseCity, onToggleFavourite, isFavourite, isCelcius, setIsCelcius }) => {

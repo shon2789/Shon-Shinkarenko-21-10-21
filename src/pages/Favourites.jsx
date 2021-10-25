@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { FavouritesList } from '../components/FavouritesList'
+import { FavouritesList } from '../components/favourites/FavouritesList'
 import { Header } from '../components/Header'
 
 export const Favourites = () => {
